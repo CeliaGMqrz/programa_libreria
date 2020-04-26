@@ -23,8 +23,7 @@ def info_libros(isbn):
     for elem in info:
         if "isbn" in elem.keys() and isbn == elem["isbn"]:
         	return render_template("detalle_libro.html", detalle_libro=elem)
-        else:
-            abort(404)
+    abort(404)
 
 
 #Probar en el entorno de desarrollo
