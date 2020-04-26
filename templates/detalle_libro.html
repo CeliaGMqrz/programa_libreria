@@ -41,7 +41,7 @@
         <h4 style = "color: blue;"><strong>Categorías:</strong></h4>
         {% for categoria in detalle_libro.categories %}
             <ul>
-                <li><p>{{categoria}}</p></li>
+                <li><a href="/categoria/{{categoria}}">{{categoria}}</a></li>
             </ul>
         {% endfor %}
     {% endif %}

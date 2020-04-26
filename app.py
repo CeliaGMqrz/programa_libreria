@@ -25,6 +25,13 @@ def info_libros(isbn):
         	return render_template("detalle_libro.html", detalle_libro=elem)
     abort(404)
 
+# Definimos la tercera ruta de las categorías.
+@app.route('/categoria/<categoria>',methods=["GET","POST"])
+def categoria(categoria):
+    for category in info:
+        if "categories" in category.keys() and categoria in category["categories"]:
+            return render_template("categoria.html", lista_libros=info, categoria=categoria)
+
 
 #Probar en el entorno de desarrollo
 app.run(debug=True)
