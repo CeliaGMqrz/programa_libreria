@@ -31,5 +31,22 @@
             </ul>
         {% endfor %}
     {% endif %}
+
+<!-- Muestra las categorías-->
+
+    {% if detalle_libro.categories %}
+        <h4 style = "color: blue;"><strong>Categorías:</strong></h4>
+        {% for categoria in detalle_libro.categories %}
+            <ul>
+                <li><p>{{categoria}}</p></li>
+            </ul>
+        {% endfor %}
+    {% endif %}
+
+<!-- Si el status es MEAP , mensaje: Este libro no se ha publicado -->
+
+{% if detalle_libro.status == "MEAP" %} 
+    <p style = "color: red"><strong> ESTE LIBRO NO SE HA PUBLICADO</strong></p>
+{% endif %}
 </body>
 </html>
