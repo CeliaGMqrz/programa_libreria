@@ -1,7 +1,7 @@
 #Importamos lo que vamos a necesitar de flask
 from flask import Flask, render_template, abort
 # Importamos la libreria os del sistema para utilizar environ
-import os 
+#import os 
 # La aplicación nos va permitir mostrar la información del fichero books.json
 # Por tanto, importamos json para leer el fichero 
 import json 
@@ -16,8 +16,12 @@ def inicio():
 	return render_template("inicio.html", lista_libros=info)
 
 
+#Probar en el entorno de desarrollo
+app.run(debug=True)
 
-
+# Para probar en el entorno de producción (Despliegue Heroku)
+#port=os.environ["PORT"]
+#app.run('0.0.0.0',int(port), debug=False)
 
 
 
