@@ -1,0 +1,19 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+<!--Muestra un título (nombre del libro)-->
+    <title>{{detalle_libro.title}}</title>
+</head>
+<body>
+    <h1>{{detalle_libro.title}}</h1>
+<!--Muestra la imagen del libro-->
+
+    {% if detalle_libro.thumbnailUrl %}
+        <img src="{{detalle_libro.thumbnailUrl}}" alt="Imagen"/>
+    {% endif %}
+
+
+</body>
+</html>

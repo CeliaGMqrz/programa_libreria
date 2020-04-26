@@ -17,6 +17,15 @@ with open ("books.json") as fichero:
 def inicio():
 	return render_template("inicio.html", lista_libros=info)
 
+# Definimos la ruta secundaria donde va estar la información del libro al que accedamos. La función recibe el codigo isbn
+@app.route('/libro/<isbn>',methods=["GET","POST"])
+def info_libros(isbn):
+    for elem in info:
+        if "isbn" in elem.keys() and isbn == elem["isbn"]:
+        	return render_template("detalle_libro.html", detalle_libro=elem)
+        else:
+            abort(404)
+
 
 #Probar en el entorno de desarrollo
 app.run(debug=True)
