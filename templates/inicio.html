@@ -13,7 +13,7 @@
     <ul>
 		{% for libro in lista_libros -%}
             {% if libro.isbn %}    
-                <li><a href="/libro/{{detalle_libro.isbn}}">{{detalle_libro.title}}</a></li><br>
+                <li><a href="/libro/{{libro.isbn}}">{{libro.title}}</a></li><br>
             {% endif %}
 		{% endfor -%}
 	</ul>
