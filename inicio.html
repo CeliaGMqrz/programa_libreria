@@ -1,0 +1,21 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+<!--Debe mostrar nuestro nombre y un título con la palabra Biblioteca-->
+    <title>Biblioteca</title>
+</head>
+<body>
+    <h1>Biblioteca</h1>
+    <h2>Celia García Márquez</h2>
+<!--Lista de enlaces que muestran los títulos de todos los libros y que lleva a la ruta de información de cada libro-->
+    <ul>
+		{% for libro in lista_libros -%}
+            {% if libro.isbn %}    
+                <li><a href="/libro/{{libro.isbn}}">{{libro.title}}</a></li><br>
+            {% endif %}
+		{% endfor -%}
+	</ul>
+</body>
+</html>
