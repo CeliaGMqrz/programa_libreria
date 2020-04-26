@@ -22,5 +22,14 @@
     <h4 style = "color: blue;"><strong>Descripción:</strong></h4>
     <p> {{detalle_libro.shortDescription}}</p><br>
 
+<!--Muestra los autores-- (Recorremos la lista)-->
+    {% if detalle_libro.authors %}
+        <h4 style = "color: blue;"><strong>Autores:</strong></h4>
+        {% for autor in detalle_libro.authors %}
+            <ul>
+                <li><p>{{autor}}</p></li>
+            </ul>
+        {% endfor %}
+    {% endif %}
 </body>
 </html>
